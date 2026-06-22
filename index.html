@@ -106,7 +106,7 @@
       <div class="who-card" id="cardFamily" onclick="selectWho('family')">
         <div class="who-emoji">👨‍👩‍👧</div>
         <div class="who-label">Menikah / Punya Keluarga</div>
-        <div class="who-sub">Ada pasangan atau tanggungan</div>
+        <div class="who-sub">Ada rumah atau tanggungan</div>
       </div>
       <div class="who-card" id="cardSingle" onclick="selectWho('single')">
         <div class="who-emoji">🧑</div>
@@ -131,11 +131,6 @@
       <label class="field-label">Gaji kamu (take home pay)</label>
       <span class="field-hint">Gaji bersih yang masuk rekening setiap bulan</span>
       <div class="field-wrap"><span class="field-prefix">Rp</span><input type="text" inputmode="numeric" class="field-input" id="fGaji" value="0" oninput="formatInput(this);liveCalc()"></div>
-    </div>
-    <div class="field" id="fieldPasangan">
-      <label class="field-label">Gaji pasangan</label>
-      <span class="field-hint">Isi 0 kalau pasangan tidak bekerja</span>
-      <div class="field-wrap"><span class="field-prefix">Rp</span><input type="text" inputmode="numeric" class="field-input" id="fPasangan" value="0" oninput="formatInput(this);liveCalc()"></div>
     </div>
     <div class="field">
       <label class="field-label">Income sampingan / freelance</label>
@@ -223,7 +218,7 @@
 const CODES=['SIAPKELUAR'];
 let whoType=null;
 let situationType=null;
-let D={gaji:0,pasangan:0,sampingan:0,rumah:0,kendaraan:0,makan:0,utilitas:0,transport:0,anak:0,lifestyle:0,lain:0,tabungan:0,investasi:0,pesangon:0};
+let D={gaji:0,sampingan:0,rumah:0,kendaraan:0,makan:0,utilitas:0,transport:0,anak:0,lifestyle:0,lain:0,tabungan:0,investasi:0,pesangon:0};
 
 function checkCode(){
   const v=document.getElementById('codeInput').value.toUpperCase().trim().replace(/[^A-Z0-9]/g,'');
@@ -256,7 +251,6 @@ function selectWho(type){
   document.getElementById('cardFamily').classList.toggle('selected',type==='family');
   document.getElementById('cardSingle').classList.toggle('selected',type==='single');
   updateNextButton();
-  document.getElementById('fieldPasangan').style.display=type==='family'?'block':'none';
   document.getElementById('fieldAnak').style.display=type==='family'?'block':'none';
 }
 
@@ -282,7 +276,7 @@ function g(id){return parseRp(id);}
 
 function liveCalc(){
   D={
-    gaji:g('fGaji'),pasangan:whoType==='family'?g('fPasangan'):0,
+    gaji:g('fGaji'),
     sampingan:g('fSampingan'),
     rumah:g('fRumah'),kendaraan:g('fKendaraan'),makan:g('fMakan'),
     utilitas:g('fUtilitas'),transport:g('fTransport'),
@@ -290,7 +284,7 @@ function liveCalc(){
     lifestyle:g('fLifestyle'),lain:g('fLain'),
     tabungan:g('fTabungan'),investasi:g('fInvestasi'),pesangon:g('fPesangon')
   };
-  const inc=D.gaji+D.pasangan+D.sampingan;
+  const inc=D.gaji+D.sampingan;
   const exp=D.rumah+D.kendaraan+D.makan+D.utilitas+D.transport+D.anak+D.lifestyle+D.lain;
   const sisa=inc-exp;
   const aset=D.tabungan+D.investasi+D.pesangon;
@@ -305,7 +299,7 @@ function liveCalc(){
 
 function showResult(){
   liveCalc();
-  const inc=D.gaji+D.pasangan+D.sampingan;
+  const inc=D.gaji+D.sampingan;
   const exp=D.rumah+D.kendaraan+D.makan+D.utilitas+D.transport+D.anak+D.lifestyle+D.lain;
   const sisa=inc-exp;
   const aset=D.tabungan+D.investasi+D.pesangon;
@@ -317,15 +311,13 @@ function showResult(){
   const monthText=m=>{
     if(m>=999) return 'AMAN SELAMA INCOME LAIN TETAP MASUK';
     const whole=Math.floor(m);
-    const days=Math.round((m-whole)*30);
-    return whole+' bulan'+(days>0?' '+days+' hari':'');
+    if(whole<1) return 'kurang dari 1 bulan';
+    return whole+' bulan';
   };
   const formatRunway=m=>{
     if(m>=999) return '<span class="word">AMAN</span>';
     const whole=Math.floor(m);
-    const days=Math.round((m-whole)*30);
-    if(days>0 && whole>0) return '<span class="num">'+whole+'</span><span class="word">BULAN</span><span class="word" style="font-size:.42em;color:var(--text);letter-spacing:-.02em">'+days+' HARI</span>';
-    if(days>0 && whole===0) return '<span class="num">'+days+'</span><span class="word">HARI</span>';
+    if(whole<1) return '<span class="word">KURANG DARI 1 BULAN</span>';
     return '<span class="num">'+whole+'</span><span class="word">BULAN</span>';
   };
   const scenarioName={resign:'RESIGN',layoff:'PHK / LAYOFF',manageout:'MANAGE OUT'}[situationType]||'KONDISI BERUBAH';
@@ -334,7 +326,7 @@ function showResult(){
     layoff:'Kalau perusahaan tiba-tiba menghentikan pekerjaanmu, gaji utama berhenti.',
     manageout:'Kalau tekanan ini berujung kamu keluar, gaji utama berhenti.'
   }[situationType]||'Jika gaji utama berhenti.';
-  const remainingIncome=(whoType==='family'?D.pasangan:0)+D.sampingan;
+  const remainingIncome=D.sampingan;
   const afterMainFlow=remainingIncome-exp;
   const jobLossMonths=afterMainFlow>=0?999:(aset>0?aset/Math.abs(afterMainFlow):0);
   const allStopMonths=exp>0?aset/exp:999;
@@ -366,10 +358,8 @@ function showResult(){
   const cta = situationType==='resign'?'Sekarang Ngapain: Rencana keluar tanpa panik →':situationType==='layoff'?'Sekarang Ngapain: Siap kalau PHK terjadi →':'Sekarang Ngapain: Hadapi manage out dengan kepala dingin →';
 
   const safeMonths = Math.floor(allStopMonths>=999?999:allStopMonths);
-  const safeDays = allStopMonths>=999?0:Math.round((allStopMonths-safeMonths)*30);
-  const runwayMain = allStopMonths>=999 ? 'AMAN' : safeMonths;
+  const runwayMain = allStopMonths>=999 ? 'AMAN' : (safeMonths<1 ? 'KURANG DARI 1' : safeMonths);
   const runwayUnit = allStopMonths>=999 ? '' : 'BULAN';
-  const dayLine = (!allStopMonths>=999 && safeDays>0) ? ' '+safeDays+' hari' : '';
   const dangerLine = allStopMonths<1
     ? 'Kalau pemasukan berhenti besok pagi, tabunganmu belum cukup untuk melewati 1 bulan penuh.'
     : allStopMonths<3
@@ -397,7 +387,7 @@ function showResult(){
           <div class="hourglass">⌛</div>
           <div>
             <div><span class="runway-num">${runwayMain}</span> <span class="runway-word">${runwayUnit}</span></div>
-            <div class="runway-caption">Waktu bertahan hidupmu jika pemasukan berhenti total mulai besok pagi${safeDays>0?' plus sekitar '+safeDays+' hari':''}.</div>
+            <div class="runway-caption">Waktu bertahan hidupmu jika pemasukan berhenti total mulai besok pagi.</div>
           </div>
         </div>
       </div>

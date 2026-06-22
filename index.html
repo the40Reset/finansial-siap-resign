@@ -19,7 +19,38 @@
 .situation-grid{display:grid;grid-template-columns:1fr;gap:.75rem;margin:1rem 0 1.15rem}.situation-card{padding:1rem;border:1px solid rgba(255,255,255,.11);background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.035));border-radius:22px;cursor:pointer;transition:.2s ease}.situation-card.selected{border-color:var(--gold);box-shadow:0 0 0 3px rgba(247,184,45,.10),0 18px 38px rgba(0,0,0,.22)}.situation-label{font-weight:900;color:var(--text);font-size:1rem}.situation-sub{font-size:.78rem;color:var(--muted);font-weight:750;margin-top:.25rem}.result-title{font-size:1.9rem;font-weight:900;letter-spacing:-.05em;line-height:1.1;margin:.15rem 0 .8rem}.scenario-grid{display:grid;grid-template-columns:1fr;gap:.9rem;margin:1rem 0}.scenario-card{border:1px solid rgba(255,255,255,.11);border-radius:24px;padding:1rem;background:linear-gradient(180deg,rgba(255,255,255,.065),rgba(255,255,255,.028));overflow:hidden}.scenario-card.green{border-color:rgba(85,215,122,.35);background:linear-gradient(180deg,rgba(85,215,122,.10),rgba(255,255,255,.03))}.scenario-card.red{border-color:rgba(240,90,69,.35);background:linear-gradient(180deg,rgba(240,90,69,.10),rgba(255,255,255,.03))}.scenario-kicker{font-size:.68rem;font-weight:900;text-transform:uppercase;letter-spacing:.12em;color:var(--gold);margin-bottom:.5rem}.scenario-big{font-size:clamp(2.25rem,13vw,4.2rem);font-weight:900;letter-spacing:-.06em;line-height:.9;color:var(--gold);max-width:100%;overflow-wrap:normal;word-break:normal}.scenario-big.runway{font-size:clamp(2.7rem,14vw,4.6rem);letter-spacing:-.05em}.scenario-big .num{display:block;font-size:1em;line-height:.82}.scenario-big .word{display:block;font-size:.72em;line-height:.9;letter-spacing:-.05em}.scenario-big.long{font-size:1.6rem;line-height:1.05;letter-spacing:-.04em}.scenario-card{min-width:0}.scenario-card .shock-row{min-width:0}.shock-val{overflow-wrap:anywhere;text-align:right}.scenario-unit{font-size:.9rem;font-weight:900;color:var(--text);margin-top:.2rem;text-transform:uppercase}.insight-box{border:1px solid rgba(247,184,45,.25);border-radius:26px;padding:1.2rem;margin:1rem 0;background:linear-gradient(135deg,rgba(247,184,45,.14),rgba(255,255,255,.035));position:relative;overflow:hidden}.insight-box:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 90% 20%,rgba(247,184,45,.18),transparent 34%);pointer-events:none}.insight-box>*{position:relative}.insight-kicker{font-size:.72rem;color:var(--gold);font-weight:900;text-transform:uppercase;letter-spacing:.12em;margin-bottom:.7rem}.insight-main{font-size:1.35rem;line-height:1.25;font-weight:900;letter-spacing:-.04em}.target-mini{display:grid;grid-template-columns:1fr;gap:.8rem;margin-top:1rem}.target-stat{background:rgba(0,0,0,.22);border:1px solid rgba(255,255,255,.10);padding:.9rem;border-radius:18px}.target-stat small{display:block;color:var(--muted);font-weight:900;font-size:.68rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.35rem}.target-stat b{font-size:1.18rem}.scenario-choice-line{font-size:.8rem;color:var(--muted);font-weight:800;margin-top:1rem}.cta-row{display:grid;grid-template-columns:1fr;gap:.75rem;margin:1rem 0 1.5rem}.pill-choice{display:block;text-align:center;text-decoration:none;padding:1rem;border-radius:18px;border:1px solid rgba(247,184,45,.30);background:rgba(247,184,45,.08);font-weight:900;color:var(--text)}@media(min-width:760px){.situation-grid{grid-template-columns:repeat(3,1fr)}.scenario-grid{grid-template-columns:repeat(3,1fr)}.target-mini{grid-template-columns:repeat(3,1fr)}.cta-row{grid-template-columns:1fr 1fr}}
 
 @media(min-width:760px){.page{max-width:760px;padding-top:1.5rem}#lock{align-items:center}.lock-inner{margin-left:auto;margin-right:8vw}.cinema-visual{min-height:440px}.page-title{font-size:4.2rem}.field{padding:1.1rem 1.2rem}}
-@media (max-width:480px){.metrics-grid{gap:.6rem}.metric-card{padding:.9rem;min-width:0}.mc-label{font-size:.62rem}.mc-val{font-size:1.15rem}.mc-note{font-size:.68rem}}</style>
+@media (max-width:480px){.metrics-grid{gap:.6rem}.metric-card{padding:.9rem;min-width:0}.mc-label{font-size:.62rem}.mc-val{font-size:1.15rem}.mc-note{font-size:.68rem}}
+/* FINAL RESULT - CLEAN EXPERIENCE */
+.final-result{padding-bottom:1.6rem}
+.result-hero-clean{position:relative;overflow:hidden;border:1px solid rgba(247,184,45,.34);border-radius:30px;padding:1.35rem;background:radial-gradient(circle at 70% 10%,rgba(247,184,45,.18),transparent 34%),linear-gradient(180deg,rgba(14,22,32,.94),rgba(5,8,13,.96));box-shadow:0 24px 70px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.08);margin-bottom:1rem}
+.result-hero-clean:before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.08),transparent 30%,rgba(247,184,45,.06));pointer-events:none}
+.final-kicker{position:relative;z-index:1;font-size:.72rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem}
+.final-title{position:relative;z-index:1;font-size:clamp(1.55rem,7vw,2.7rem);line-height:1.05;font-weight:900;letter-spacing:-.055em;text-transform:uppercase;margin:0 0 .85rem;color:var(--text)}
+.final-title span{color:var(--gold)}
+.final-sub{position:relative;z-index:1;color:var(--muted);font-weight:750;font-size:1.02rem;line-height:1.55;margin:0 0 1rem}
+.runway-card{position:relative;z-index:1;display:grid;grid-template-columns:86px 1fr;gap:1rem;align-items:center;border:1px solid rgba(247,184,45,.36);border-radius:26px;background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.025));padding:1rem;margin-top:1rem}
+.hourglass{width:76px;height:76px;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(247,184,45,.32);background:radial-gradient(circle,rgba(247,184,45,.16),rgba(247,184,45,.03));font-size:2.25rem;box-shadow:0 0 38px rgba(247,184,45,.14)}
+.runway-num{font-size:clamp(4.1rem,22vw,7rem);font-weight:900;letter-spacing:-.08em;line-height:.82;color:var(--gold)}
+.runway-word{font-size:clamp(1.45rem,8vw,2.45rem);font-weight:900;letter-spacing:-.045em;color:var(--gold);margin-left:.25rem}
+.runway-caption{color:var(--text);font-weight:780;line-height:1.35;font-size:.98rem;margin-top:.55rem}
+.clean-card{border:1px solid rgba(255,255,255,.12);border-radius:26px;background:linear-gradient(180deg,rgba(255,255,255,.065),rgba(255,255,255,.025));padding:1.1rem;margin:1rem 0;box-shadow:0 16px 44px rgba(0,0,0,.25)}
+.clean-card.red{border-color:rgba(240,90,69,.42);background:linear-gradient(135deg,rgba(240,90,69,.16),rgba(255,255,255,.025) 55%)}
+.clean-card.green{border-color:rgba(85,215,122,.36);background:linear-gradient(135deg,rgba(85,215,122,.13),rgba(255,255,255,.025) 55%)}
+.clean-label{font-size:.75rem;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:.65rem}
+.clean-card.red .clean-label{color:#ff5b5b}
+.clean-card.green .clean-label{color:var(--green)}
+.clean-text{font-size:1.05rem;line-height:1.62;color:var(--text);font-weight:750;margin:0}
+.clean-text strong{color:var(--gold);font-weight:900}
+.clean-question{font-size:clamp(1.35rem,6vw,2rem);line-height:1.18;font-weight:900;letter-spacing:-.04em;color:#ff5b5b;margin:.35rem 0 0}
+.next-mini{display:grid;grid-template-columns:1fr auto;gap:1rem;align-items:center}
+.target-mini{border:1px dashed rgba(85,215,122,.55);border-radius:20px;min-width:96px;padding:.65rem .75rem;text-align:center;color:var(--green);font-weight:900}
+.target-mini .n{font-size:2.4rem;line-height:.9;letter-spacing:-.07em}
+.target-mini .b{font-size:.78rem;letter-spacing:.05em;text-transform:uppercase}
+.clean-cta{display:grid;gap:.75rem;margin-top:1rem}
+.clean-cta .pill-choice{width:100%;justify-content:center}
+@media(max-width:420px){.result-hero-clean{padding:1.08rem;border-radius:26px}.runway-card{grid-template-columns:66px 1fr;gap:.75rem;padding:.85rem}.hourglass{width:60px;height:60px;font-size:1.8rem}.clean-text{font-size:.98rem}.next-mini{grid-template-columns:1fr}.target-mini{width:100%}}
+
+</style>
 </head>
 <body>
 
@@ -334,105 +365,82 @@ function showResult(){
   }
   const cta = situationType==='resign'?'Sekarang Ngapain: Rencana keluar tanpa panik →':situationType==='layoff'?'Sekarang Ngapain: Siap kalau PHK terjadi →':'Sekarang Ngapain: Hadapi manage out dengan kepala dingin →';
 
+  const safeMonths = Math.floor(allStopMonths>=999?999:allStopMonths);
+  const safeDays = allStopMonths>=999?0:Math.round((allStopMonths-safeMonths)*30);
+  const runwayMain = allStopMonths>=999 ? 'AMAN' : safeMonths;
+  const runwayUnit = allStopMonths>=999 ? '' : 'BULAN';
+  const dayLine = (!allStopMonths>=999 && safeDays>0) ? ' '+safeDays+' hari' : '';
+  const dangerLine = allStopMonths<1
+    ? 'Kalau pemasukan berhenti besok pagi, tabunganmu belum cukup untuk melewati 1 bulan penuh.'
+    : allStopMonths<3
+      ? 'Kalau pemasukan berhenti besok pagi, waktumu sangat pendek. Ini bukan ruang aman.'
+      : allStopMonths<12
+        ? 'Hari ini kamu masih bisa jalan. Tapi kalau pemasukan berhenti besok pagi, hitung mundur langsung dimulai.'
+        : 'Kalau pemasukan berhenti besok pagi, kamu sudah punya waktu yang cukup panjang untuk bergerak.';
+  const nextMove = gap<=0
+    ? 'Jaga biaya hidupmu tetap terkendali. Jangan naik gaya hidup hanya karena tabungan terlihat aman.'
+    : sisa>0
+      ? 'Target berikutnya jelas: tambah dana darurat sampai minimal 12 bulan biaya hidup.'
+      : 'Sebelum bicara target 12 bulan, bereskan dulu bocor bulanan. Kalau tiap bulan minus, tabungan hanya tinggal menunggu habis.';
+  const questionLine = allStopMonths<12
+    ? 'Apakah '+monthText(allStopMonths)+' cukup untuk menemukan sumber uang berikutnya?'
+    : 'Kalau hidup berubah, kamu punya waktu. Sekarang jangan rusak posisi ini dengan keputusan bodoh.';
+
   document.getElementById('resultContent').innerHTML=`
-    <div class="hero-box">
-      <div class="hero-label">💰 Kondisi kamu hari ini</div>
-      <div class="metrics-grid" style="margin:0 0 1rem">
-        <div class="metric-card"><div class="mc-label">Uang masuk</div><div class="mc-val">${rp(inc)}</div><div class="mc-note">per bulan</div></div>
-        <div class="metric-card"><div class="mc-label">Uang keluar</div><div class="mc-val">${rp(exp)}</div><div class="mc-note">per bulan</div></div>
-      </div>
-      <div class="hero-num" style="font-size:clamp(3.8rem,18vw,6.4rem);color:${sisa>=0?'var(--green)':'var(--red)'}">${sisa<0?'-':''}${rp(sisa).replace('Rp ','')}</div>
-      <div class="hero-unit">SISA SETIAP BULAN</div>
-      <div class="hero-status">${currentLine}</div>
-    </div>
+    <div class="final-result">
+      <div class="result-hero-clean">
+        <div class="final-kicker">THE 40 RESET · FINANCIAL READINESS</div>
+        <h1 class="final-title">Jika besok kamu kehilangan <span>semua pemasukan</span></h1>
+        <p class="final-sub">Uang yang kamu miliki saat ini diperkirakan cukup untuk membiayai hidupmu selama:</p>
 
-    <div class="shock-title">⚡ Jika kondisi berubah: ${scenarioName}</div>
-    <div class="scenario-grid">
-      <div class="scenario-card ${afterMainFlow>=0?'green':'red'}">
-        <div class="scenario-kicker">1. ${jobLossTitle}</div>
-        <div class="shock-row"><span class="shock-key">Income tersisa</span><span class="shock-val" style="color:var(--green)">${rp(remainingIncome)}</span></div>
-        <div class="shock-row"><span class="shock-key">Pengeluaran</span><span class="shock-val" style="color:var(--red)">${rp(exp)}</span></div>
-        <div class="shock-row"><span class="shock-key">Sisa / kurang</span><span class="shock-val" style="color:${afterMainFlow>=0?'var(--green)':'var(--red)'}">${afterMainFlow<0?'-':''}${rp(afterMainFlow)}</span></div>
-        <div class="scenario-big" style="font-size:2.1rem;color:${afterMainFlow>=0?'var(--green)':'var(--gold)'}">${monthText(jobLossMonths)}</div>
-        <div class="scenario-unit">${afterMainFlow>=0?'tidak menggerus uang yang ada':'perkiraan bertahan'}</div>
-        <div class="shock-insight">${jobLossNote}</div>
+        <div class="runway-card">
+          <div class="hourglass">⌛</div>
+          <div>
+            <div><span class="runway-num">${runwayMain}</span> <span class="runway-word">${runwayUnit}</span></div>
+            <div class="runway-caption">Waktu bertahan hidupmu jika pemasukan berhenti total mulai besok pagi${safeDays>0?' plus sekitar '+safeDays+' hari':''}.</div>
+          </div>
+        </div>
       </div>
-      <div class="scenario-card red">
-        <div class="scenario-kicker">2. Jika semua income berhenti</div>
-        <div class="shock-row"><span class="shock-key">Uang yang tersedia</span><span class="shock-val" style="color:var(--gold)">${rp(aset)}</span></div>
-        <div class="shock-row"><span class="shock-key">Pengeluaran</span><span class="shock-val" style="color:var(--red)">${rp(exp)}</span></div>
-        <div class="scenario-big runway">${formatRunway(allStopMonths)}</div>
-        <div class="scenario-unit">hidup masih berjalan</div>
-        <div class="shock-insight">Ini skenario paling keras: tidak ada gaji kamu, pasangan, atau income sampingan.</div>
+
+      <div class="clean-card">
+        <div class="clean-label">Apa artinya?</div>
+        <p class="clean-text">${dangerLine}</p>
       </div>
-      <div class="scenario-card green">
-        <div class="scenario-kicker">3. Target The 40 Reset</div>
-        <div class="shock-row"><span class="shock-key">Sisa tiap bulan</span><span class="shock-val" style="color:${sisa>=0?'var(--green)':'var(--red)'}">${sisa<0?'-':''}${rp(sisa)}</span></div>
-        <div class="shock-row"><span class="shock-key">Target</span><span class="shock-val">12 bulan tanpa penghasilan</span></div>
-        <div class="scenario-big" style="font-size:clamp(2rem,9vw,3.4rem);line-height:.92;color:${sisa>0||gap<=0?'var(--green)':'var(--red)'}">${targetBig}</div>
-        <div class="scenario-unit">${targetUnit}</div>
-        <div class="shock-insight">${targetSentence}</div>
+
+      <div class="clean-card red">
+        <div class="clean-label">Realita</div>
+        <p class="clean-text">Cari kerja baru makan waktu. Bangun usaha makan waktu. Belajar skill baru juga makan waktu.</p>
+        <div class="clean-question">${questionLine}</div>
       </div>
-    </div>
 
-    <div class="insight-box">
-      <div class="insight-kicker">😳 Fakta yang perlu disadari</div>
-      <div class="insight-main">${coreInsight}</div>
-    </div>
-
-    <div class="score-box">
-      <div class="score-top">
-        <div class="result-title" style="color:${levelColor};margin:0">${level}</div>
-        <div class="score-level">Standar The 40 Reset: 12 bulan aman</div>
+      <div class="clean-card green">
+        <div class="clean-label">Harus apa?</div>
+        <div class="next-mini">
+          <p class="clean-text"><strong>${nextMove}</strong></p>
+          <div class="target-mini"><div class="n">12</div><div class="b">bulan</div></div>
+        </div>
       </div>
-      <div class="score-desc">Bukan skor. Ini posisi runway kamu jika semua penghasilan berhenti.</div>
-      <div class="level-bar">
-        <div class="lv lv-crisis ${level==='CRISIS'?'active':''}">CRISIS</div>
-        <div class="lv lv-warning ${level==='WARNING'?'active':''}">WARNING</div>
-        <div class="lv lv-stable ${level==='STABLE'?'active':''}">STABLE</div>
-        <div class="lv lv-freedom ${level==='FREEDOM'?'active':''}">FREEDOM</div>
+
+      <div class="sc-box">
+        <div class="sc-top">📱 Screenshot & Share Hasil Kamu</div>
+        <div class="sc-brand">THE 40 RESET — FINANCIAL READINESS</div>
+        <div class="sc-grid">
+          <div class="sc-item"><div class="sc-item-key">Jika semua income stop</div><div class="sc-item-val" style="color:var(--gold)">${monthText(allStopMonths)}</div></div>
+          <div class="sc-item"><div class="sc-item-key">Dana tersedia</div><div class="sc-item-val">${rp(aset)}</div></div>
+          <div class="sc-item"><div class="sc-item-key">Biaya hidup / bulan</div><div class="sc-item-val">${rp(exp)}</div></div>
+          <div class="sc-item"><div class="sc-item-key">Target aman</div><div class="sc-item-val" style="color:var(--green)">12 bulan</div></div>
+        </div>
+        <div class="sc-footer">the40resetofficial.com · @dhimasgarendi</div>
       </div>
-    </div>
 
-    <div class="target-box">
-      <div class="target-label">🎯 Standar The 40 Reset</div>
-      <div class="tr-row"><span class="tr-key">Uang agar hidup aman 12 bulan</span><span class="tr-val">${rp(target)}</span></div>
-      <div class="tr-row"><span class="tr-key">Uang yang sudah tersedia</span><span class="tr-val" style="color:var(--gold)">${rp(aset)}</span></div>
-      <div class="tr-row"><span class="tr-key">Masih kurang</span><span class="tr-val" style="color:${gap>0?'var(--red)':'var(--green)'}">${gap>0?rp(gap):'Sudah aman'}</span></div>
-      <div class="progress-wrap">
-        <div class="progress-top"><span>Posisi kamu sekarang</span><span>${prgPct}%</span></div>
-        <div class="progress-bg"><div class="progress-fill" id="pFill" style="width:0%"></div></div>
+      <div class="clean-cta">
+        <a href="https://the40reset.github.io/sekarang-ngapain/" class="pill-choice" target="_blank">Lanjut: Sekarang Ngapain? →</a>
+        <a href="https://lynk.id/the_40_reset" class="pill-choice" target="_blank">Lihat Tools The 40 Reset →</a>
       </div>
-      <p class="dana-note">Targetnya jelas: uang cukup untuk hidup 12 bulan jika pemasukan berhenti.</p>
-    </div>
 
-    <div class="sc-box">
-      <div class="sc-top">📱 Screenshot & Share Hasil Kamu</div>
-      <div class="sc-brand">THE 40 RESET — FINANCIAL READINESS</div>
-      <div class="sc-grid">
-        <div class="sc-item"><div class="sc-item-key">Skenario</div><div class="sc-item-val" style="color:var(--gold)">${scenarioName}</div></div>
-        <div class="sc-item"><div class="sc-item-key">Status</div><div class="sc-item-val">${whoType==='family'?'MENIKAH':'SINGLE'}</div></div>
-        <div class="sc-item"><div class="sc-item-key">Sisa Bulanan</div><div class="sc-item-val" style="color:${sisa>=0?'var(--green)':'var(--red)'}">${sisa<0?'-':''}${rp(sisa)}</div></div>
-        <div class="sc-item"><div class="sc-item-key">Jika Gaji Kamu Berhenti</div><div class="sc-item-val">${monthText(jobLossMonths)}</div></div>
-        <div class="sc-item"><div class="sc-item-key">Jika Semua Income Stop</div><div class="sc-item-val" style="color:var(--gold)">${monthText(allStopMonths)}</div></div>
-        <div class="sc-item"><div class="sc-item-key">Standar 12 Bulan</div><div class="sc-item-val">${prgPct}%</div></div>
-      </div>
-      <div class="sc-footer">lynk.id/the_40_reset · @the40reset</div>
+      <div class="don-box"><p>❤️ <strong>10%</strong> dari pembelian produk ini disumbangkan ke yayasan yang membutuhkan.</p></div>
+      <div class="page-footer">The 40 Reset · by Dhimas Garendi · financial-readiness</div>
     </div>
-
-    <div class="verdict-box">
-      <div class="verdict-label">🔖 The Reset Verdict</div>
-      <div class="verdict-text">${scenarioLead} ${coreInsight}</div>
-      <div class="scenario-choice-line">Setelah tahu hasilnya, langkah berikutnya harus sesuai skenario yang kamu pilih.</div>
-    </div>
-
-    <div class="cta-row">
-      <a href="https://the40reset.github.io/sekarang-ngapain/" class="pill-choice" target="_blank">${cta}</a>
-      <a href="https://lynk.id/the_40_reset" class="pill-choice" target="_blank">Lihat Tools The 40 Reset →</a>
-    </div>
-
-    <div class="don-box"><p>❤️ <strong>10%</strong> dari pembelian produk ini disumbangkan ke yayasan yang membutuhkan.</p></div>
-    <div class="page-footer">The 40 Reset · by Dhimas Garendi · financial-readiness</div>
   `;
 
   showPage('resultPage');

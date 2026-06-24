@@ -360,21 +360,30 @@ function showResult(){
   const safeMonths = Math.floor(allStopMonths>=999?999:allStopMonths);
   const runwayMain = allStopMonths>=999 ? 'AMAN' : (safeMonths<1 ? 'KURANG DARI 1' : safeMonths);
   const runwayUnit = allStopMonths>=999 ? '' : 'BULAN';
+  const gapLine = gap>0 ? rp(gap) : 'Rp 0';
   const dangerLine = allStopMonths<1
-    ? 'Kalau pemasukan berhenti besok pagi, tabunganmu belum cukup untuk melewati 1 bulan penuh.'
-    : allStopMonths<3
-      ? 'Kalau pemasukan berhenti besok pagi, waktumu sangat pendek. Ini bukan ruang aman.'
-      : allStopMonths<12
-        ? 'Hari ini kamu masih bisa jalan. Tapi kalau pemasukan berhenti besok pagi, hitung mundur langsung dimulai.'
-        : 'Kalau pemasukan berhenti besok pagi, kamu sudah punya waktu yang cukup panjang untuk bergerak.';
+    ? 'Kalau pemasukan berhenti besok pagi, dana yang ada belum cukup untuk 1 bulan penuh.'
+    : allStopMonths<12
+      ? 'Dana darurat lo masih di bawah target aman The 40 Reset.'
+      : 'Dana darurat lo sudah melewati target 12 bulan. Ini posisi yang jauh lebih enak untuk mengambil keputusan.';
   const nextMove = gap<=0
-    ? 'Jaga biaya hidupmu tetap terkendali. Jangan naik gaya hidup hanya karena tabungan terlihat aman.'
+    ? 'Jaga posisi ini. Jangan naik gaya hidup hanya karena tabungan terlihat aman.'
     : sisa>0
-      ? 'Target berikutnya jelas: tambah dana darurat sampai minimal 12 bulan biaya hidup.'
-      : 'Sebelum bicara target 12 bulan, bereskan dulu bocor bulanan. Kalau tiap bulan minus, tabungan hanya tinggal menunggu habis.';
+      ? 'Kalau masih ada sisa dari penghasilan setiap bulan, fokus berikutnya sederhana: tambah dana darurat sampai target 12 bulan tercapai.'
+      : 'Sebelum mengejar target 12 bulan, bereskan dulu bocor bulanannya. Kalau tiap bulan minus, tabungan hanya tinggal menunggu habis.';
   const questionLine = allStopMonths<12
-    ? 'Apakah '+monthText(allStopMonths)+' cukup untuk menemukan sumber uang berikutnya?'
-    : 'Kalau hidup berubah, kamu punya waktu. Sekarang jangan rusak posisi ini dengan keputusan bodoh.';
+    ? 'Target: 12 bulan biaya hidup. Kekurangan saat ini: '+gapLine+'.'
+    : 'Target 12 bulan sudah tercapai. Sekarang tugasnya menjaga posisi ini tetap aman.';
+  const cvBlock = allStopMonths<12 ? `
+      <div class="clean-card gold cv-card" style="border-color:rgba(247,184,45,.38);background:linear-gradient(135deg,rgba(247,184,45,.12),rgba(17,25,35,.98));">
+        <div class="clean-label">Siapkan CV lo sebelum dibutuhkan</div>
+        <p class="clean-text">Banyak orang baru membuka CV mereka setelah keadaan mulai tidak baik-baik saja.</p>
+        <p class="clean-text"><strong>Jangan jadi salah satunya.</strong></p>
+        <p class="clean-text">Kalau CV lo belum siap digunakan hari ini, mulai rapikan dari sekarang.</p>
+        <p class="clean-text">Di The 40 Reset, ada <strong>Professional CV Builder™</strong> yang bisa langsung lo gunakan.</p>
+        <p class="clean-text">Template ini dibuat dari pengalaman <strong>16+ tahun</strong> di dunia korporasi.</p>
+        <a href="https://lynk.id/the_40_reset" class="pill-choice" target="_blank" style="margin-top:14px;width:100%;justify-content:center;">Mulai Rapikan CV Lo →</a>
+      </div>` : '';
 
   document.getElementById('resultContent').innerHTML=`
     <div class="final-result">
@@ -399,7 +408,7 @@ function showResult(){
 
       <div class="clean-card red">
         <div class="clean-label">Realita</div>
-        <p class="clean-text">Cari kerja baru makan waktu. Bangun usaha makan waktu. Belajar skill baru juga makan waktu.</p>
+        <p class="clean-text">Cari kerja baru makan waktu. Bangun usaha makan waktu. Menyiapkan langkah berikutnya juga makan waktu.</p>
         <div class="clean-question">${questionLine}</div>
       </div>
 
@@ -409,7 +418,10 @@ function showResult(){
           <p class="clean-text"><strong>${nextMove}</strong></p>
           <div class="target-mini"><div class="n">12</div><div class="b">bulan</div></div>
         </div>
+        ${gap>0?`<p class="clean-text" style="margin-top:14px">Dan jangan cuma menyiapkan uangnya. <strong>Siapkan juga CV lo.</strong></p>`:''}
       </div>
+
+      ${cvBlock}
 
       <div class="sc-box">
         <div class="sc-top">📱 Screenshot & Share Hasil Kamu</div>
